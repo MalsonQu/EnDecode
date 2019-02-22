@@ -80,8 +80,6 @@ func GetCrypt(endeInfo *EnDeInfoEntity) error {
 		crypt, err = NewXTEABlockCrypt(pass[:16])
 	case "salsa20":
 		crypt, err = NewSalsa20BlockCrypt(pass)
-	case "chacha20":
-		crypt, err = NewChacha20BlockCrypt(pass)
 	default:
 		endeInfo.Crypt = "aes"
 		crypt, err = NewAESBlockCrypt(pass)
